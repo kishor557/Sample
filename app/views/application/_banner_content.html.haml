@@ -1,0 +1,24 @@
+.pikachoose
+  %ul#pikame.jcarousel-skin-pika
+    %li
+      %a{:href=>"#"}
+        %img{:alt => "", :src => "assets/gallery/pict0517.jpg"}/
+    %li
+      %a{:href=>"#"}
+        %img{:alt => "", :src => "assets/gallery/pict0533.jpg"}/
+    %li
+      %a{:href=>"#"}
+        %img{:alt => "", :src => "assets/gallery/pict0538.jpg"}/
+    %li
+      %a{:href=>"#"}
+        %img{:alt => "", :src => "assets/gallery/pict0587.jpg"}/
+    %li
+      %a{:href=>"#"}
+        %img{:alt => "", :src => "assets/album/1.jpg"}/
+        
+        
+:javascript
+  $(document).ready(function(){
+      $("#pikame").PikaChoose({carousel:true,carouselOptions:{wrap:'circular'}});
+    
+  });        

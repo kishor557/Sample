@@ -1,0 +1,420 @@
+/* ********************************* */
+/* GLOBAL STYLES */
+/* ********************************* */
+body {
+	background-color: #fff;
+
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 1em;
+
+	color: #000;
+
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	outline: none;
+}
+
+/* dark brown header */
+h1 {
+	margin: 0;
+	padding: .4em 0 .45em .6em;
+
+	font-size: .7em;
+
+	background-color: #996;
+ 	color: #cc9;
+
+	white-space: nowrap;
+}
+
+/* dark brown header link (portfolio) */
+h1 a {
+ 	color: #cc9;
+ 	text-decoration: none;
+}
+
+/* dark brown header link (portfolio) */
+h1 a:hover {
+ 	color: #fff;
+}
+
+/* in-page header */
+h2 {
+	width: 100%;
+	border-bottom: #cc9 1px solid;
+	margin: 0 0 .5em 0;
+	padding: 1em 0 0 0;
+	font-size: 1.2em;
+}
+
+/* in-page sub-header */
+h3 {
+	display: block;
+	margin: 0;
+	padding: 0 0 1px 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+h4 {
+	display: block;
+	margin: 0;
+	padding: 0 0 1px 0;
+
+	text-transform: uppercase;
+	font-size: .85em;
+	font-weight: bold;
+	color: #996;
+}
+
+img {
+	border: none;
+}
+
+p {
+	margin: 0;
+	padding: 0 0 1em 0;
+	clear: both;
+}
+
+/* bulleted lists */
+ul {
+	margin: 0;
+	padding: 0 0 0 1em;
+
+	clear: both;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 0;
+	padding:0 0 0 1em;
+
+	background-image: url(images/bullet.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0.15em;
+}
+
+
+/* definition list */
+dl {
+	margin: 0 0 0 0;
+	padding: 0 0 2em 0;
+	clear: both;
+}
+
+dt {
+	margin: 0;
+	padding: 1em 0 0 1em;
+	font-weight: bold;
+}
+
+dd {
+	margin: 0;
+	padding: 0 0 0 1em;
+}
+
+
+/* ********************************* */
+/* PAGE HEADER */
+/* ********************************* */
+#pageHeader {}
+
+
+/* ********************************* */
+/* PRIMARY NAVIGATION */
+/* ********************************* */
+#nav1 {
+	display: block;
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0 0 .25em 0;
+
+	background-color: #cc9;
+	white-space: nowrap;
+}
+
+#nav1 li {
+	display: inline;
+	margin: 0;
+	padding: 0 .75em 0 .25em;
+	background-image: none;
+}
+
+#nav1 li a {
+	font-size: .7em;
+	font-weight: bold;
+	
+	padding: 0 .3em 0 .3em;
+
+	text-decoration: none;
+ 	color: #787850;
+}
+
+#nav1 li a:hover {
+	background-color: #996;
+	color: #000;
+}
+
+#nav1 li a.current {
+	color: #fff;
+}
+
+
+/* ********************************* */
+/* PAGE CONTENT */
+/* ********************************* */
+#pageContent {
+	font-size: .7em;
+	line-height: 1.3em;
+	width: 45em;
+}
+
+#main {
+	padding: 1em 0 3em 1em;
+ 	color: #000;
+}
+
+#main a {
+	color: #787850;
+	text-decoration: underline;
+}
+
+#main a:hover {
+	text-decoration: none;
+}
+
+#main h2.section {
+	border-top: #cc9 1px solid;
+	padding-top: 0.5em;
+}
+
+#main p.section {
+	border-top: #cc9 1px solid;
+	margin-top: 3em;
+}
+
+/* list of jump-down links */
+#main ul.jumps {
+	padding: 0 0 0 2em;
+}
+
+#main ul.jumps li {
+	padding: 0 0 .5em 0;
+	background: none;
+}
+
+#main ul.jumps a {
+	padding-right: 11px;
+	background: url(/images/jump.png) right bottom no-repeat;
+}
+
+
+/* ********************************* */
+/* PICTURES */
+/* ********************************* */
+
+#PICTURES #main a {
+	float: left;
+	display: block;
+	width: 33%;
+	text-decoration: none;
+	text-align: center;
+	padding: .5em 0;
+	margin: 0 0 1em 0;
+}
+
+#PICTURES #main a:hover {
+	background: #e6e6cc;
+}
+
+#PICTURES #main a img {
+	display: block;
+	width: 93%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#PICTURES #main span {
+	display: block;
+	width: 92%
+	margin: 0 auto;
+}
+
+/* *************************************** */
+/* JOB CONTENT (both resume and portfolio) */
+/* *************************************** */
+
+div.job {
+	clear: both;
+	margin: 1em 0 0 0;
+	padding: 0 0 1em 0;
+}
+
+div.job h3 {
+	float: left;
+	width: 60%;
+}
+
+div.job .what, 
+div.job .where, 
+div.job .when {
+	float: left;
+	display: block;
+}
+
+div.job .what {
+	padding: 0 0 1px 0;
+	width: 40%;
+	text-align: right;
+	color: #996;
+}
+
+div.job .where, 
+div.job .when {
+	position: relative;
+	width: 60%;
+	text-transform: uppercase;
+	font-size: .85em;
+	line-height: 1.5em;
+	height: 1.6em;
+	background-color: #e6e6cc;
+}
+
+div.job .when {
+	width: 40%;
+	text-align: right;
+}
+
+div.job p {
+	padding: .5em 0;
+}
+
+
+/* ********************************* */
+/* RESUME CONTENT */
+/* ********************************* */
+
+#RESUME h4 {
+	clear: both;
+	padding: .5em 0 0 2.3em;
+	font-weight: normal;
+	font-size: .85em;
+}
+
+#RESUME #main ul {
+	padding-bottom: .5em;
+}
+
+#RESUME #main div.job ul {
+	padding-bottom: .2em;
+}
+
+#RESUME div.job ul li {
+	background-image: none;
+	padding-top: .3em;
+	padding-bottom: .3em;
+}
+
+#RESUME div.job p {
+	clear: both;
+	padding: .2em 0 .5em 0;
+}
+
+#RESUME div.modified {
+	clear: both;
+	margin: 0;
+	padding: 30px 0 0 0;
+	color: #999999;
+	text-align:center;
+}
+
+
+/* ********************************* */
+/* PORTFOLIO CONTENT */
+/* ********************************* */
+
+#PORTFOLIO h2 {
+	padding-top: 0.2em;
+	font-size: 1.2em;
+	border-bottom: none;
+}
+
+div.job p img {
+	clear: left;
+	float: left;
+	width: 100px;
+	margin: 0 .5em 0 0;
+}
+
+
+/* screenshots thumbnails */
+#PORTFOLIO ul.screenshots {
+	margin: 0;
+	padding: 0;
+	display: block;
+	clear: both;
+	list-style-type: none;
+}
+
+#PORTFOLIO ul.screenshots li {
+	display: block;
+	margin: .5em 0;
+	padding: 1em 0;
+	width: 44em;
+	float: left;
+	background: #e6e6cc;
+}
+
+#PORTFOLIO ul.screenshots li img {
+	float: left;
+	margin: 0 1em;
+}
+
+#PORTFOLIO ul.screenshots li span {
+	display: block;
+	padding-right: .5em;
+}
+
+/* list of second-tier clients */
+#PORTFOLIO dl {
+	display: block;
+	width: 21em;
+	float: left;
+	clear: none;
+}
+
+#PORTFOLIO dt a {
+	font-weight: bold;
+}
+
+/* ********************************* */
+/* RESOURCES CONTENT */
+/* ********************************* */
+
+#RESOURCES #main li { padding-bottom: 10px; }
+
+#RESOURCES .download {
+	text-align: center;
+}
+
+/* source code */
+#RESOURCES pre {
+	background: #eee;
+	color: #666;
+	padding: 1.5em;
+	margin: 0;
+	font-size: 1em;
+	font-family: verdana;
+	overflow: auto;
+}
+
+/* source code comments */
+#RESOURCES pre span {
+	color: #699;
+	font-family:arial;
+}

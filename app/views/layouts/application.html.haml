@@ -1,0 +1,131 @@
+!!!
+%html
+  %head
+    %title Site
+    = stylesheet_link_tag "normal", "green", "style", "spacegallery","pika/bottom","pika/base", :media => "all"
+    %link{:rel=>"shortcut icon",:href=>"/assets/favicon11.ico",:type=>"image/x-icon"}/
+    = javascript_include_tag "jquery","jquery.nmcDropDown", "jquery.hoverIntent", "jquery.dcmegamenu.1.3.2", "eye", "layout", "utils", "spacegallery", "jquery.jcarousel.min","jquery.pikachoose"
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    = csrf_meta_tags
+  %body
+    .container
+      #logo
+        //Krish Tech
+      #header
+        .green
+          %ul.mega-menu
+            %li
+              %a{:href => "/"} Home 
+            %li
+              %a{:href => "#"} About
+              %ul
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "profile"} Profile
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "directors"} Board of Directors
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "more_info"} Other Info
+            %li
+              %a{:href => "#"} Technologies
+              %ul
+                %li
+                  %a{:href => "#"} Ruby on Rails
+                  %ul
+                    %li
+                      %a{:href => "#", :class => "nav-links", :id => "ror_dev"} Products Development
+                    %li
+                      %a{:href => "#", :class => "nav-links", :id => "ror_service"} Products services
+                    %li
+                      %a{:href => "#", :class => "nav-links", :id => "ror_maintain"} Products Maintainence
+                %li
+                  %a{:href => "#"} PHP
+                  %ul
+                    %li
+                      %a{:href => "#", :class => "nav-links", :id => "php_dev"} Products Development
+                %li
+                  %a{:href => "#"} Python
+                  %ul
+                    %li
+                      %a{:href => "#", :class => "nav-links", :id => "python_dev"} Products Development
+            %li
+              %a{:href => "#"} Contact Us
+              %ul
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "locations"} Locations
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "queries"} Queries Here
+                %li
+                  %a{:href => "#", :class => "nav-links", :id => "local"} Local Address
+            %li#links
+              %a{:href => "#"} Account
+              %ul
+                - if user_signed_in?
+                  %li
+                    = link_to current_user.email, "#"
+                  %li 
+                    #{link_to "Sign out", signout_path, :method => :delete}
+                - else
+                  %li
+                    = link_to "Sign up", new_user_registration_path, :classs => "popup" 
+                    
+                  %li
+                    = link_to "sign in", new_user_session_path, :classs => "popup"
+                  %li
+                    
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"     
+      .content
+        = render 'banner_content'
+        .main-content  
+          = yield
+        .signin{:style => "display: none;"}
+          = render 'devise/sessions/popup', :resource => User.new, :resource_name => User.new  
+          = render 'devise/registrations/register_popup', :resource => User.new, :resource_name => User.new  
+      #footer
+        CopyRight reserved@2013
+:javascript
+  $(document).ready(function(){
+    console.log("h");
+    
+    jQuery('.mega-menu').dcMegaMenu({
+      rowItems: '4',
+      speed: 'fast',
+      effect: 'slide'
+    });
+    
+    jQuery('#signup').click(function() {
+      jQuery('.sign_up_form').dialog({
+        autoOpen: true,
+        height: 300,
+        width: 338
+      });
+    });
+    
+    jQuery('#signin').click(function() {
+      jQuery('#signin-form').dialog({
+        autoOpen: true,
+        height: 300,
+        width: 338
+      });
+    });
+    
+    
+    $('ul.mega-menu li a.nav-links').click(function(){
+       var id = $(this).attr('id');
+      $('.main-content').load('/application/get_static?id='+id);
+      return false;
+    });
+    
+    function popupCenter(url, width, height, name) {
+      var left = (screen.width/2)-(width/2);
+      var top = (screen.height/2)-(height/2);
+      return window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
+    }
+
+    $("a.popup").click(function(e) {
+      popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
+      e.stopPropagation(); return false;
+    });
+  
+  });
