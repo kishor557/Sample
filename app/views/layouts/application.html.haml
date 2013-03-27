@@ -4,7 +4,7 @@
     %title Site
     = stylesheet_link_tag "normal", "green", "style", "spacegallery","pika/bottom","pika/base", :media => "all"
     %link{:rel=>"shortcut icon",:href=>"/assets/favicon11.ico",:type=>"image/x-icon"}/
-    = javascript_include_tag "jquery","jquery.nmcDropDown", "jquery.hoverIntent", "jquery.dcmegamenu.1.3.2", "eye", "layout", "utils", "spacegallery", "jquery.jcarousel.min","jquery.pikachoose"
+    = javascript_include_tag "jquery","jquery.nmcDropDown", "jquery.hoverIntent", "jquery.dcmegamenu.1.3.2", "eye", "layout", "utils", "spacegallery", "jquery.jcarousel.min","jquery.pikachoose", "normal"
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     = csrf_meta_tags
@@ -67,10 +67,10 @@
                     #{link_to "Sign out", signout_path, :method => :delete}
                 - else
                   %li
-                    = link_to "Sign up", new_user_registration_path, :classs => "popup" 
+                    = link_to "Sign up", new_user_registration_path, :id => "signup" 
                     
                   %li
-                    = link_to "sign in", new_user_session_path, :classs => "popup"
+                    = link_to "sign in", new_user_session_path, :id => "signin"
                   %li
                     
       - flash.each do |name, msg|
