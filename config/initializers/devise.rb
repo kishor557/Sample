@@ -213,6 +213,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require "omniauth-facebook"
  ## config.omniauth :facebook, '430791980344979', '2d8fa175bcac6386315c6c5e4a1f07b5'
+  config.omniauth :google_oauth2, '887153820556.apps.googleusercontent.com', 'ApQQCRLXwGZXWkHPls-JvibY'
+  
   config.omniauth :facebook, '430791980344979', '2d8fa175bcac6386315c6c5e4a1f07b5',
                   :scope => 'email,user_birthday,offline_access,publish_stream,publish_checkins', 
                   :display => 'popup'

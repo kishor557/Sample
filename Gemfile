@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'fb_graph'
+gem "omniauth-google-oauth2"
+
 
 gem 'capistrano'
 
@@ -32,7 +34,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'fancybox-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

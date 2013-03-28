@@ -1,0 +1,72 @@
+/* @override http://samuelgarneau.com/lab/slidebox/slidebox-my-own-style.css */
+
+.slide-button {
+	margin-left: 76%;
+	margin-right: auto;
+	cursor: pointer;
+	color: #ddd;
+	background-color: #333;
+	opacity: 0.9;
+}
+
+.slide-button:hover {
+	color: #9f9d8e;
+}
+
+#workspace {
+	padding-top: 50px;
+}
+
+#list-1 {
+	display: inline;
+	float: left;
+}
+
+#list-2 {
+	display: inline;
+	float: left;
+}
+
+#list-3 {
+	float: left;
+}
+
+#list-4 {
+	float: left;
+}
+
+ul.list {
+	line-height: 20px;
+	list-style-type: none;
+	width: 20%;
+	font-size: 0.85em;
+}
+
+ul.list li {
+	border-bottom: 1px solid rgba(73,81,84,0.49);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+
+ul.list li:hover {
+	color: #9f9d8e;
+}
+
+ul.list li.header {
+	color: #e56f03;
+	letter-spacing: 3px;
+	padding-bottom: 20px;
+	font-variant: small-caps;
+	font-size: 1.7em;
+	margin-top: 10px;
+	cursor: text;
+}
+
+ul.list li.header:hover {
+	font-size: 1.7em;
+}
+
+label {
+	display: block;
+}

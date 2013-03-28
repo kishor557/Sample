@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,:token_authenticatable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  has_many :positions, :dependent => :destroy
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
@@ -12,8 +14,15 @@ class User < ActiveRecord::Base
      data = access_token['extra']['raw_info']
      if user = User.find_by_email(data["email"])
        user
-     else # Create an user with a stub password. 
-       User.create!(:email => data["email"], :password => Devise.friendly_token[0,20]) 
+     else # Create an user with a stub password.
+       user = User.new
+       user.email =  data["email"]
+       user.password = Devise.friendly_token[0,20]
+       user.skip_confirmation!
+      if user.save
+        user
+      else
+      end
      end
    end
 end

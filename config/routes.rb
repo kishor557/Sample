@@ -1,5 +1,5 @@
 Site::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "sessions", :registrations => "registrations" } do
       get 'sign_in', :to => 'users/sessions#new', :as => :new_user_session
       #get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
       match "/signout" => "sessions#destroy", :as => :signout
@@ -8,6 +8,7 @@ Site::Application.routes.draw do
   resources :application do 
     collection do
       get 'get_static'
+      get 'extra'
     end
   end
   # The priority is based upon order of creation:

@@ -1,5 +1,6 @@
 /*
  *= require_self
+  *= require fancybox
 */
 
 @import "bootstrap/mixins";
@@ -22,12 +23,17 @@ body {
   width: 980px;
   //background: #fff;
   margin: 0px auto;
+  margin-top: -70px;
   @include clearfix();
   
   #logo {
     padding: 10px 0px;
-    font-size: 26px;
+    font-size: 44px;
     font-weight: bold;
+    margin-bottom: -13px;
+    span {
+      margin-left: -57px;
+    }
   }
   
   #header {
@@ -59,7 +65,7 @@ body {
   text-align: center;
 }
 
-.content {
+.content-one {
   clear: both;
   width: 100%;
   @include clearfix();
@@ -97,12 +103,50 @@ body {
 #nav li ul li a { display: block; }
 
 
-
-
 #footer {
 	padding: 10px;
 	background-color: #fff;
 	color: #000;
 	text-align: center;
 	font-size: 12px;
+}
+
+#signin-form {
+  color: #000;
+  a {
+    color: #000 !important;
+  }
+}
+
+
+.leftbar {
+  width: 100px;
+  height: 355px;
+  background: white;
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  border-radius: 4px;
+  padding: 3px 4px;
+  
+  .img1, .img2, .img3 {
+    margin-top: 34px;
+    img {
+      border-radius: 28px 28px 28px 28px;
+    }
+  }
+  .img2 {
+    img {
+    
+    }
+  }
+}
+
+
+#iframebox {
+background: none repeat scroll 0 0 #000;left: 50%;top: 50%;z-index: 1501;
+}
+
+#overallbgframe {
+background: none repeat scroll 0 0 #fff;height: 100%;left: 0;top: 0;width: 100%;z-index: 1500;
 }
