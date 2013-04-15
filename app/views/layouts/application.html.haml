@@ -89,6 +89,11 @@
                     - resource_class.omniauth_providers.each do |provider|
                       %li
                         = link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => "popup"
+                %li
+                  = link_to "Default theme", root_path(:layout => "application")
+                %li
+                  = link_to "New Layout theme", root_path(:layout => "new_layout")
+                    
                     
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"     

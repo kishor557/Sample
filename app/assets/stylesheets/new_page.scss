@@ -1,0 +1,121 @@
+/*
+ *= require_self
+  *= require fancybox
+*/
+
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+@import "bootstrap/utilities";
+@import "bootstrap/reset";
+@import "bootstrap/buttons";
+@import "bootstrap/dropdowns";
+@import "bootstrap/carousel";
+@import url(https://fonts.googleapis.com/css?family=Oswald:300);
+@import url(http://fonts.googleapis.com/css?family=Yesteryear);
+
+
+body { 
+  margin: 0px;
+  color: #fff;
+  padding: 0px !important;
+  @include clearfix();
+}
+
+header {
+ background: #fff; 
+ opacity: 0.8;
+ min-height: 50px;
+ position: relative;
+ @include clearfix(); 
+}
+
+
+#account {
+  float: right;
+  min-width: 240px;
+  text-align: right;
+  position: relative; 
+  z-index: 100;
+  top: -36px;   
+  a#accounts { padding-right: 55px; }
+  ul.dropmenu {
+    display: none;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    position: absolute;
+    li {
+      list-style-type: none;
+      padding: 10px;
+      background: #444;
+      border-bottom: 1px solid #fff;
+      position: relative;
+      margin-bottom: 0px;
+      &:hover {
+        background: #fff;
+        color: #000;
+        a {
+          color: #000;
+        }
+      } 
+      a {
+       text-decoration: none;
+       color: #fff;
+      }
+    }
+  }
+} 
+
+
+.container {
+  width: 920px;
+  margin: 20px auto;
+  min-height: 200px;
+  position: relative;
+  @include clearfix();
+  
+  .left-content1 {
+    width: 18%;
+    min-height: 200px;
+    background: #fff; 
+    opacity: 0.8;
+    float: left;
+    @include clearfix();
+    #menu {
+      width: 97%;
+    }
+  }
+  
+  .main-content {
+    width: 625px;
+    min-height: 200px;
+    background: #000;
+    opacity: 0.7; 
+    float: left;
+    margin-right: 5px;
+    border-radius: 4px;
+    padding: 10px;
+    @include clearfix(); 
+  }
+  
+  .right-content {
+    width: 250px;
+    background: #000;
+    min-height: 200px;
+    opacity: 0.7; 
+    float: right;
+    border-radius: 4px;
+    padding: 10px;
+    @include clearfix();  
+  }  
+}
+
+.accordin { margin: 20px 0px;}
+
+
+ul#demo-block{ margin:0 15px 15px 15px; }
+ul#demo-block li{ margin:0 0 10px 0; padding:10px; display:inline; float:left; clear:both; color:#aaa; background:url('img/bg-black.png'); font:11px Helvetica, Arial, sans-serif; }
+ul#demo-block li a{ color:#eee; font-weight:bold; }
+.social_page iframe { background: #fff; opacity: 0.9;}
+
+
+

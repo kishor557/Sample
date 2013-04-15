@@ -1,0 +1,27 @@
+%ul.dropmenu
+  - if user_signed_in?
+    %li
+      = link_to current_user.email, "#"
+    %li 
+      #{link_to "Sign out", signout_path, :method => :delete}
+      
+  - else
+    %li
+      %a{:href => new_user_registration_path, :id => "signup"} Signup
+      =# link_to "Sign up", new_user_registration_path, :id => "signup" 
+      
+    %li
+      %a{:href => new_user_session_path, :id => "signin"} Signin
+      =# link_to "sign in", new_user_session_path, :id => "signin"
+      
+    %li
+      = link_to "Forgot your password?", new_password_path(resource_name) if (devise_mapping.recoverable? && controller_name != 'passwords')
+    - if devise_mapping.omniauthable? 
+      - resource_class.omniauth_providers.each do |provider|
+        %li
+          = link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class => "popup"
+  %li
+    = link_to "Default theme", root_path(:layout => "application")
+  %li
+    = link_to "New Layout theme", root_path(:layout => "new_layout")
+

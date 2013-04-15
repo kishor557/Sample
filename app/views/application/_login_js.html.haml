@@ -1,0 +1,19 @@
+:javascript
+  $(document).ready(function(){
+    $('#signup').fancybox();
+    
+    $('#signin').fancybox();
+    
+    function popupCenter(url, width, height, name) {
+      var wid = $(window).width();
+      var left = wid/3;
+      var hei = $(window).height();
+      var top = hei/3;
+      return window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
+    }
+
+    $("a.popup").click(function(e) {
+      popupCenter($(this).attr("href"), 500, 400, "authPopup");
+      e.stopPropagation(); return false;
+    });
+  });

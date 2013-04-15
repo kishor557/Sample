@@ -1,0 +1,82 @@
+!!!
+%html
+  %head
+    %title Site
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    = stylesheet_link_tag 'new_page', 'supersized','supersized.shutter',"style/slidebox", "style/slidebox-my-own-style",'style_1','sliderkit-core','sliderkit-demos','sliderkit-site', :media => "all"
+    %link{:rel=>"shortcut icon",:href=>"/assets/favicon1.gif",:type=>"image/x-icon"}/
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.compatibility.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    = javascript_include_tag "supersized.3.2.7.min", "supersized.shutter.min", "slidebox", "jquery.mousewheel.min", "jquery.sliderkit.1.9.2.pack"
+    = csrf_meta_tags
+  %body
+    %header
+      %center
+        .sliderkit.newslider-minimal
+          .sliderkit-legend Latest news:
+          .sliderkit-panels
+            .sliderkit-panel
+              %a{:href => "#", :title => "[link title]"} Is simply dummy text of the printing and typesetting industry...
+            .sliderkit-panel
+              %a{:href => "#", :title => "[link title]"} Is simply dummy text of the printing and typesetting industry...
+            .sliderkit-panel
+              %a{:href => "#", :title => "[link title]"} Is simply dummy text of the printing and typesetting industry...
+    #account
+      %a{:href => "#", :id => "accounts"} Account
+      = render 'login_menu'
+    .container
+      .main-content
+        = yield  
+      .right-content
+        = render 'menu'
+        .social_page
+          = render 'social_pages'
+
+
+= render 'slider' 
+:javascript
+  $(function() {
+    $( "#menu" ).menu();
+    $( "#accordion" ).accordion();
+    
+  });
+  
+  $(document).ready(function() {
+    $('#accounts').click(function() {
+      $('ul.dropmenu').slideToggle();
+      
+    });
+    
+    $(".newslider-minimal").sliderkit({
+    auto:true,
+    circular:true,
+    shownavitems:1,
+    panelfx:"sliding",
+    panelfxspeed:400,
+    panelfxeasing:"easeOutCirc",
+    mousewheel:false,
+    verticalnav:true,
+    verticalslide:true
+    });
+    
+    //$('#signup').fancybox();
+    
+    //$('#signin').fancybox();
+    
+    function popupCenter(url, width, height, name) {
+      var wid = $(window).width();
+      var left = wid/3;
+      var hei = $(window).height();
+      var top = hei/3;
+      return window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
+    }
+
+    $("a.popup").click(function(e) {
+      popupCenter($(this).attr("href"), 500, 400, "authPopup");
+      e.stopPropagation(); return false;
+    });
+  });
+  

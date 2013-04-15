@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate_user!, :only => [""]
+  before_filter :load_layout, :only => [:index]
+  
   
   def index
   end
@@ -35,4 +37,23 @@ class ApplicationController < ActionController::Base
    logger.debug "\n\n\n##### #{request.referer}\n\n"
    root_path
   end
+  
+  
+  private
+    def load_layout
+      if current_user
+        if params[:layout]
+          current_user ? current_user.update_attribute(:layout, params[:layout]) : ""
+          render :layout => params[:layout]
+        else
+          render :layout => current_user.layout.blank? ? "new_layout" : current_user.layout 
+        end
+      else
+        if params[:layout]
+          render :layout => params[:layout]
+        else
+          render :layout => 'new_layout'
+        end
+      end
+    end
 end
