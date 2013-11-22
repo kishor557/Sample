@@ -99,7 +99,8 @@
         = content_tag :div, msg, :id => "flash_#{name}"     
       .content-one
         = render 'banner_content'
-        .main-content  
+        .main-content
+          hello
           = yield
         .signin
           =# render 'devise/sessions/popup', :resource => User.new, :resource_name => User.new  
