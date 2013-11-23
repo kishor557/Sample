@@ -18,6 +18,9 @@ gem 'omniauth-facebook'
 gem 'fb_graph'
 gem "omniauth-google-oauth2"
 
+group :production do
+  gem "pg"
+end
 
 gem 'capistrano'
 
